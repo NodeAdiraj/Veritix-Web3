@@ -1,16 +1,19 @@
 {
-  "name": "nat-marketplace-backend",
+  "name": "trueticket",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "solhint 'contracts/*.sol'",
+    "lint": "solhint 'contracts/**/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
     "format": "prettier --write .",
-    "coverage": "hardhat coverage"
+    "coverage": "hardhat coverage",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network <your_network>",
+    "compile": "hardhat compile"
   },
   "devDependencies": {
     "@chainlink/contracts": "^0.4.0",
-    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
+    "@nomiclabs/hardhat-ethers": "^2.0.4",
     "@nomiclabs/hardhat-etherscan": "^3.0.0",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.5.0",
@@ -29,8 +32,8 @@
     "solidity-coverage": "^0.7.13"
   },
   "mocha": {
-    "timeout": 10000000
+    "timeout": 100000
   },
   "packageManager": "yarn@1.22.22",
-  "license":"MIT"
+  "license": "MIT"
 }
