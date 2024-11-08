@@ -1,7 +1,8 @@
+Contract deployment details:
 tx: 0xb0b8b13c0cef6870744efbefeb0579cb00137798ce3069239a7211644f3dda35)...: deployed at 0x5FbDB2315678afecb367f032d93F642f64180aa3 with 2077295 gas
 TicketNFT deployed at: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ✨  Done in 0.73s.
-
+Sample frontend implementation:
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { useMoralis } from "react-moralis";

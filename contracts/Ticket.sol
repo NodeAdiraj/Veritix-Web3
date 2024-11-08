@@ -10,8 +10,8 @@ contract Ticket is ERC721 {
     address private owner;
     struct Ticket {
         uint256 eventId;
-        uint256 price;
         bool isUsed;
+        uint32 quantity;
     }
 
     mapping(uint256 => Ticket) public tickets;
@@ -19,8 +19,8 @@ contract Ticket is ERC721 {
     event TicketIssued(
         address indexed to,
         uint256 indexed tokenId,
-        uint256 eventId,
-        uint256 price
+        uint32 indexed quantity,
+        uint256 eventId
     );
     event TicketUsed(uint256 indexed tokenId);
     modifier onlyOwner(address sender) {
@@ -37,7 +37,7 @@ contract Ticket is ERC721 {
     function issueTicket(
         address to,
         uint256 eventId,
-        uint256 price
+        uint32 quantity
     ) external onlyOwner(msg.sender) returns (uint256) {
         tokenId++;
         uint256 newTicketId = tokenId;
@@ -46,11 +46,11 @@ contract Ticket is ERC721 {
 
         tickets[newTicketId] = Ticket({
             eventId: eventId,
-            price: price,
+            quantity: quantity,
             isUsed: false
         });
 
-        emit TicketIssued(to, newTicketId, eventId, price);
+        emit TicketIssued(to, newTicketId, quantity, eventId);
         return newTicketId;
     }
 
