@@ -21,7 +21,7 @@
     "chai": "^4.3.4",
     "dotenv": "^16.0.0",
     "ethereum-waffle": "^3.4.0",
-    "ethers": "^5.5.1",
+    "ethers": "^6.13.4",
     "hardhat": "^2.9.1",
     "hardhat-contract-sizer": "^2.4.0",
     "hardhat-deploy": "^0.9.29",
@@ -35,5 +35,9 @@
     "timeout": 100000
   },
   "packageManager": "yarn@1.22.22",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
 }

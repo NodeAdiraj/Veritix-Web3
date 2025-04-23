@@ -7,7 +7,7 @@ module.exports = async () => {
   const { deployer } = await getNamedAccounts();
 
   const args = [];
-  const ticketNFT = await deploy("Ticket", {
+  const ticketNFT = await deploy("Veritix", {
     from: deployer,
     args: args,
     log: true,
